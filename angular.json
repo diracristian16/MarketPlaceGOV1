@@ -81,6 +81,11 @@
               "browserTarget": "MarketPLaceGo:build:development"
             }
           },
+          "options":{
+            "host": "10.43.100.182",
+            "port": 3500
+
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
