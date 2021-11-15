@@ -22,14 +22,14 @@ export class LoginComponent implements OnInit {
   }
   loginProces(){
     if(this.formGroup){
-      console.log(this.formGroup);
-      this.authService.login(this.formGroup.value).subscribe(result=>{
+      //console.log(this.formGroup);
+      this.authService.login().subscribe(result=>{
         if(result.access_token){
-          console.log(result);
-          alert(result.access_token);
+         // console.log(result);
+          //alert(result.access_token);
         }else{
-          console.log(result);
-          alert(result.access_token);
+          //console.log(result);
+          //alert(result.access_token);
         }
       })
     }

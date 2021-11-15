@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(private http : HttpClient) { }
 
-  login(data: any){
+  login(){
     //console.log(data);
     let parametros = new HttpParams();
     parametros = parametros.append('grant_type','password');
@@ -27,8 +27,9 @@ export class AuthService {
     };
 
 
-    return this.http.post<any>("api/security/oauth/token",data, opciones )
+    return this.http.post<any>("api/security/oauth/token",opciones, opciones )
     .pipe(map((res:any)=>{
+      console.log("hola estoy en auth");
       localStorage.setItem('tokenid', res.access_token);
       return res
     }))

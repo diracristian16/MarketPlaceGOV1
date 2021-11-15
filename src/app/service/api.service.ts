@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -9,8 +9,20 @@ import { AuthService } from './auth.service';
 export class ApiService {
 
   public tokenList : any ;
+  public listdata: any;
 
   constructor(private http : HttpClient, private authService: AuthService) { }
+  authToken(){
+    //console.log(localStorage.getItem('tokenid')+"ojo este es el token");
+    const valAuth = localStorage.getItem('tokenid');
+    //console.log(valAuth+"ojo este es el token seteado");
+    this.authService.login().subscribe(result=>{
+      if(valAuth == null){
+        //console.log('estoy en el if adentro');
+        window.location.reload();
+      }
+    })
+  }
 
 
   protected headers= new HttpHeaders({
@@ -18,6 +30,7 @@ export class ApiService {
   });
 
   getProductFilterClothes(){
+    this.authToken();
     return this.http.get<any>("api/products/products/filtrar/categoria/ropa",  { headers: this.headers } )
     .pipe(map((res:any)=>{
 
