@@ -1,0 +1,18 @@
+<header class="header-section">
+  <section class="deal-of-week set-bg spad" data-setbg="assets/img/time-bg.jpg">
+    <div class="container">
+        <div class="col-lg-6 text-center">
+            <div class="section-title">
+                <h2>Ingreso</h2>
+                    <form class="login-form" [formGroup]="formGroup" (ngSubmit)="loginProces()">
+                      <input class="form-control" formControlName="username" type="text" placeholder="Ingresa Correo Electronico" />
+                      <br>
+                      <input class="form-control" formControlName="password" type="password" placeholder="Ingresa Contraseña" />
+                      <br>
+                      <button class="primary-btn" type="submit">Ingresar</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+  </section>
+</header>

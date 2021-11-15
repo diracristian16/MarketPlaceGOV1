@@ -1,0 +1,94 @@
+
+<header class="header-section">
+  <div class="header-top">
+      <div class="container">
+          <div class="ht-left">
+              <div class="mail-service">
+                  <i class=" fa fa-envelope"></i>
+                  marketplacego@gmail.com
+              </div>
+              <div class="phone-service">
+                  <i class=" fa fa-phone"></i>
+                  +57 320 454 32 67
+              </div>
+          </div>
+          <div class="ht-right">
+              <a routerLink="login" class="login-panel"><i class="fa fa-user"></i>Ingresar</a>
+              <div class="lan-selector">
+                  <select class="language_drop" name="countries" id="countries" style="width:300px">
+                    <option value='es' data-image="assets/img/spain.png" data-imagecss="flag yt"
+                          data-title="Spain">Español</option>
+                      <option value='yt' data-image="assets/img/flag-1.jpg" data-imagecss="flag yt"
+                          data-title="English">English</option>
+                      <option value='yu' data-image="assets/img/flag-2.jpg" data-imagecss="flag yu"
+                          data-title="Bangladesh">German </option>
+                  </select>
+              </div>
+              <div class="top-social">
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-twitter-alt"></i></a>
+                  <a href="#"><i class="ti-linkedin"></i></a>
+                  <a href="#"><i class="ti-pinterest"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container">
+      <div class="inner-header">
+          <div class="row">
+              <div class="col-lg-2 col-md-2">
+                  <div class="logo">
+                      <a href="#">
+                        <img style="width: 350px; margin-top: 5px;" src="assets/img/market.png" alt="">
+                      </a>
+                  </div>
+              </div>
+              <div class="col-lg-7 col-md-7">
+                  <div class="advanced-search">
+                      <button type="button" class="category-btn"> Categorías !!!</button>
+                      <div class="input-group">
+                          <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="¿Qué producto busca?   " />
+                          <button type="button"><i class="ti-search"></i></button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 text-right col-md-3">
+                <button routerLink="cart" class="btn btn-white">
+                  <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                  <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+                </button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="nav-item">
+    <div class="container">
+        <div class="nav-depart">
+            <div class="depart-btn">
+                <i class="ti-menu"></i>
+                <span>Categorías</span>
+                <ul class="depart-hover">
+                    <li><a routerLink="clothes">Ropa</a></li>
+                    <li><a routerLink="appliances">Electrodomesticos</a></li>
+                    <li><a routerLink="technology">Tecnología</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="nav-menu mobile-menu">
+            <ul>
+                <li><a routerLink="products" href="#">Inicio</a></li>
+                <li><a  routerLink="contact">Contáctenos</a></li>
+                <li><a>Páginas</a>
+                    <ul class="dropdown">
+                        <li><a routerLink="cart">Carrito de compras</a></li>
+                        <li><a routerLink="customer">Registro</a></li>
+                        <li><a routerLink="login">Ingresar</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="blog">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+  </div>
+</header>

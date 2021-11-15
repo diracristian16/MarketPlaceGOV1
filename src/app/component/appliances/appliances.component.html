@@ -1,0 +1,121 @@
+<section class="women-banner spad">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="section-title">
+              <h2>Electrodomesticos</h2>
+          </div>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-lg-2 "></div>
+          <div class="col-lg-8 ">
+              <div class="row">
+                <!--button (click)=probar()>probar</button-->
+                <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+                  <div class="col-md-3 col-lg-3">
+                  <div class="product-item">
+                      <div class="pi-pic">
+                          <img with="300px" heigth="300px" [src]="baseEndPoint+'/uploads/img/'+item.id+'?fotoHashCode='+item.imagenHashCode" alt="" />
+                          <div class="sale">vendido</div>
+                          <div class="icon">
+                              <i class="icon_heart_alt"></i>
+                          </div>
+                          <ul>
+                              <li class="w-icon active"><a (click)=addtocart(item) ><i class="icon_bag_alt"></i></a></li>
+                              <li class="quick-view"><a  (click)=addtocart(item)>Agregar Carrito</a></li>
+                              <li class="w-icon"><a (click)=addtocart(item) ><i class="fa fa-random"></i></a></li>
+                          </ul>
+                      </div>
+                      <div class="pi-text">
+                          <div class="catagory-name">{{item.categoria}}</div>
+                          <a href="#">
+                              <h5>{{item.nombre}}</h5>
+                          </a>
+                          <div class="product-price">
+                            {{item.precio}}
+                              <span>${{item.cantidad}}</span>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                </ng-container>
+
+              </div>
+          </div>
+          <div class="col-lg-2 "></div>
+      </div>
+  </div>
+</section>
+
+
+<footer class="footer-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+              <div class="footer-left">
+                  <div class="footer-logo">
+                      <a href="#">MarketPlaceGO</a>
+                  </div>
+                  <ul>
+                      <li>Dirección: Universidad Javeriana</li>
+                      <li>Teléfono: +57 320 454 32 67</li>
+                      <li>Email: marketplacego@gmail.com</li>
+                  </ul>
+                  <div class="footer-social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-2 offset-lg-1">
+              <div class="footer-widget">
+                  <h5>Información</h5>
+                  <ul>
+                      <li><a href="#">Carrito de Compras</a></li>
+                      <li><a href="#">Contactanos</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-2">
+              <div class="footer-widget">
+                  <h5>Mi cuenta</h5>
+                  <ul>
+                      <li><a href="#">Ingreso</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="newslatter-item">
+                  <h5>Ingresa correo para noticias</h5>
+                  <p>Obtenga actualizaciones por correo electrónico sobre nuestra última tienda y ofertas especiales.</p>
+                  <form action="#" class="subscribe-form">
+                      <input type="text" placeholder="Ingresa Correo Electronico" />
+                      <button type="button">Subscribirse</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="copyright-reserved">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="copyright-text">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                    Universidad Javereiana
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    by <a href="#" target="_blank">MarketPlaceGO</a>
+                  </div>
+                  <div class="payment-pic">
+                      <img src="assets/img/payment-method.png" alt="" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
