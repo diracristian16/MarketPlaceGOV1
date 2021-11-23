@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class LoginComponent implements OnInit {
   formGroup!: FormGroup;
+  router: any;
+  document: any;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -27,9 +29,11 @@ export class LoginComponent implements OnInit {
         if(result.access_token){
          // console.log(result);
           //alert(result.access_token);
+          window.location.href='http://localhost:3500/home';
         }else{
           //console.log(result);
           //alert(result.access_token);
+          window.location.href='http://localhost:3500/login';
         }
       })
     }

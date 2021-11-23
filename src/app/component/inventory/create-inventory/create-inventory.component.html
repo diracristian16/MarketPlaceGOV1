@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)= "guardarCustomer()">
+<form [formGroup]="form" >
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-prepend">
@@ -6,7 +6,7 @@
           <i class="fas fa-sort-numeric-up-alt"></i>
         </div>
       </div>
-      <input type="text" class="form-control" formControlName="numeroDocumento" placeholder="Número Documento">
+      <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre del producto">
     </div>
   </div>
 
@@ -17,11 +17,11 @@
           <i class="fas fa-passport"></i>
         </div>
       </div>
-      <select class="form-control" formControlName="tipoDocumento">
-        <option value="" selected>Seleccione tipo documento..</option>
-        <option value="CC">Cédula Ciudadania</option>
-        <option value="CE">Cédula Extranjeria</option>
-        <option value="PP">Pasaporte</option>
+      <select class="form-control" formControlName="categoria">
+        <option value="" selected>Seleccione Categoria..</option>
+        <option value="Ropa">Ropa</option>
+        <option value="Electrodomesticos">Electrodomesticos</option>
+        <option value="Tecnologia">Tecnologia</option>
       </select>
     </div>
   </div>
@@ -33,7 +33,7 @@
           <i class="fas fa-file-signature"></i>
         </div>
       </div>
-      <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres">
+      <input type="text" class="form-control" formControlName="cantidad" placeholder="Cantidad">
     </div>
   </div>
   <div class="form-group">
@@ -43,7 +43,7 @@
           <i class="fas fa-address-card"></i>
         </div>
       </div>
-      <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+      <input type="text" class="form-control" formControlName="descripcion" placeholder="Descripción Producto">
     </div>
   </div>
   <div class="form-group">
@@ -53,17 +53,7 @@
           <i class="fas fa-map-marked"></i>
         </div>
       </div>
-      <input type="text" class="form-control" formControlName="direccion" placeholder="Direccion">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <div class="input-group-text bg-white">
-          <i class="fas fa-mobile-alt"></i>
-        </div>
-      </div>
-      <input type="text" class="form-control" formControlName="telefono" placeholder="Telefono">
+      <input type="text" class="form-control" formControlName="precio" placeholder="Precio">
     </div>
   </div>
 
@@ -74,19 +64,19 @@
           <i class="fas fa-envelope-open-text"></i>
         </div>
       </div>
-      <input type="text" class="form-control" formControlName="email" placeholder="Email">
+      <input type="file" class="form-control" formControlName="archivo" placeholder="Imagen">
+      <input type="text" class="form-control" >
     </div>
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-success btn-block" ng-show="btnEditar" (click)="guardarCustomer()" [disabled]="form.invalid">
+    <button type="submit" class="btn btn-success btn-block" ng-show="btnEditar" (click)="guardarInventory()" [disabled]="form.invalid">
       <i class="fas fa-database"></i>
       Guardar</button>
   </div>
-  <div class="form-group">
+  <!--div class="form-group">
     <button type="submit" class="btn btn-info btn-block"  (click)="editarCustomer()" [disabled]="form.invalid">
       <i class="fas fa-database"></i>
       Editar</button>
-  </div>
+  </div-->
 </form>
-

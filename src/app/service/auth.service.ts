@@ -20,7 +20,8 @@ export class AuthService {
 
     const opciones = {
       headers: new HttpHeaders({
-        'Content-Type':'application/x-www-form-urlencoded',
+        //'Content-Type':'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
         'Authorization': 'Basic ZnJvbnRlbmRhcHA6MTIzNDU='
       }),
       params: parametros

@@ -1,0 +1,78 @@
+<ng-container *ngIf="products.length !=0">
+  <div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="cozy" novalidate-->
+      <header class="header-section">
+        <div class="section-title">
+          <h2>Medio de Pago</h2>
+          <p>Gracias por preferirnos. </p>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-sort-numeric-up-alt"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" formControlName="numero" placeholder="Número Tarjeta de crédito">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-passport"></i>
+              </div>
+            </div>
+            <select class="form-control" formControlName="tipo">
+              <option value="" selected>Seleccione Franquicia Tarjeta..</option>
+              <option value="VISA">VISA</option>
+              <option value="MASTERCARD">MASTERCARD</option>
+              <option value="AMERICAN EXPRESS">AMERICAN EXPRESS</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-file-signature"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" formControlName="vencimiento" placeholder="YY/MM Vencimiento">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-address-card"></i>
+              </div>
+            </div>
+            <input type="text" class="form-control" formControlName="codcvc" placeholder="Código CVC">
+          </div>
+        </div>
+        <label for=""><h3>Total : ${{grandTotal}}</h3></label>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block"   [disabled]="form.invalid">
+              <i class="fas fa-database"></i>
+              PAGAR</button>
+          </div>
+      </header>
+    </form>
+  </div>
+</ng-container>
+<ng-container *ngIf="products.length ==0">
+  <div class="container">
+      <div class="card">
+          <h5 class="card-title">Mi carrito de compras</h5>
+      </div>
+      <div class="center"><br><br><br><br><br>
+          <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+          <h4>Tu carrito esta vacio!</h4>
+          <h6>Agrega un producto ahora!</h6>
+          <button routerLink="/products" class="btn btn-warning">Comprar Ahora</button>
+      </div>
+  </div>
+</ng-container>

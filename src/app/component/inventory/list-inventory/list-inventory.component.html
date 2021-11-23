@@ -1,0 +1,16 @@
+<table class="table table-sm">
+  <tr *ngFor="let inventory of inventoryService.list">
+    <td>{{inventory.nombre}}</td>
+    <td>{{inventory.precio}}</td>
+    <td>{{inventory.cantidad}}</td>
+    <td>{{inventory.descripcion}}</td>
+    <td>{{inventory.categoria}}</td>
+    <td><img style="width: 500px;" [src]="baseEndPoint+'/uploads/img/'+inventory.id+'?fotoHashCode='+inventory.archivo" alt=""></td>
+    <td>
+      <i class="far fa-edit fa-lg text-info" ng-model="btnEditar"  (click)="editar(inventory.id, inventory)" style="cursor:pointer"></i>
+    </td>
+    <td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="eliminarProduct(inventory.id)" style="cursor:pointer"></i>
+    </td>
+  </tr>
+</table>

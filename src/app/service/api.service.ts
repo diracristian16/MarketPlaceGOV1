@@ -39,6 +39,7 @@ export class ApiService {
   }
 
   getProductFilterAppliances(){
+    this.authToken();
     return this.http.get<any>("api/products/products/filtrar/categoria/electrodomesticos",  { headers: this.headers } )
     .pipe(map((res:any)=>{
 
@@ -47,6 +48,7 @@ export class ApiService {
   }
 
   getProductFilterTecnology(){
+    this.authToken();
     return this.http.get<any>("api/products/products/filtrar/categoria/tecnologia",  { headers: this.headers } )
     .pipe(map((res:any)=>{
 

@@ -18,6 +18,13 @@ import { LoginComponent } from './component/login/login.component';
 import { ListCustomerComponent } from './component/customer/list-customer/list-customer.component';
 import { CreateCustomerComponent } from './component/customer/create-customer/create-customer.component';
 import { CustomerComponent } from './component/customer/customer.component';
+import { HomeComponent } from './component/home/home.component';
+import { InventoryComponent } from './component/inventory/inventory.component';
+import { CreateInventoryComponent } from './component/inventory/create-inventory/create-inventory.component';
+import { ListInventoryComponent } from './component/inventory/list-inventory/list-inventory.component';
+import { PaymentsComponent } from './component/payments/payments.component';
+import { OrdenesComponent } from './component/ordenes/ordenes.component';
+import { PagosComponent } from './component/pagos/pagos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,14 @@ import { CustomerComponent } from './component/customer/customer.component';
     LoginComponent,
     ListCustomerComponent,
     CreateCustomerComponent,
-    CustomerComponent
+    CustomerComponent,
+    HomeComponent,
+    InventoryComponent,
+    CreateInventoryComponent,
+    ListInventoryComponent,
+    PaymentsComponent,
+    OrdenesComponent,
+    PagosComponent
   ],
   imports: [
     BrowserModule,
